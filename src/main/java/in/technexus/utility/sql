@@ -1,0 +1,64 @@
+1)
+CREATE TABLE users (
+    useremail VARCHAR2(60),
+    username VARCHAR2(60),
+    mobile VARCHAR2(15),
+    address VARCHAR2(250),
+    pincode NUMBER(6),
+    password VARCHAR2(20),
+    CONSTRAINT users_useremail_pk PRIMARY KEY (useremail)
+);
+================================================================================================================================
+2)
+CREATE TABLE products(
+    pid VARCHAR2(45),
+    pname VARCHAR2(100),
+    ptype VARCHAR2(20),
+    pinfo VARCHAR2(350),
+    pprice NUMBER(12,2),
+    pquantity NUMBER,
+    image BLOB,
+    CONSTRAINT products_pid_pk PRIMARY KEY (pid)
+);
+====================================================================================================================================
+3)
+CREATE TABLE orders(
+    orderid VARCHAR2(45),
+    proid VARCHAR2(45),
+    quantity NUMBER,
+    amount NUMBER(10,2),
+    shipped NUMBER(1),
+    CONSTRAINT orders_orderid_pk PRIMARY KEY (orderid,proid),
+    CONSTRAINT orders_orderid_unique UNIQUE (orderid),
+    CONSTRAINT orders_productid_fk FOREIGN KEY(proid) REFERENCES products(pid)
+);
+====================================================================================================================================
+4)
+CREATE TABLE transactions (
+    transid VARCHAR2(45),
+    useremail VARCHAR2(60),
+    transtime DATE,
+    amount NUMBER(10,2),
+    CONSTRAINT transactions_transid_pk PRIMARY KEY (transid),
+    CONSTRAINT transactions_transid_fk FOREIGN KEY (transid) REFERENCES orders(orderid),
+    CONSTRAINT transactions_useremail_fk FOREIGN KEY (useremail) REFERENCES users (useremail)
+);
+=====================================================================================================================================
+5)
+CREATE TABLE userdemand (
+    useremail VARCHAR2(60),
+    prodid VARCHAR2(45),
+    quantity NUMBER,
+    CONSTRAINT userdemand_useremail_pk PRIMARY KEY (useremail, prodid),
+    CONSTRAINT userdemand_prodid_fk FOREIGN KEY (prodid) REFERENCES products(pid),
+    CONSTRAINT userdemand_useremail_fk FOREIGN KEY (useremail) REFERENCES users(useremail)
+);
+============================================================================================================================================
+6)
+CREATE TABLE usercart (
+    useremail VARCHAR2(60),
+    prodid VARCHAR2(45),
+    quantity NUMBER,
+    CONSTRAINT usercart_prodid_fk FOREIGN KEY (prodid) REFERENCES products (pid),
+    CONSTRAINT usercart_useremail_fk FOREIGN KEY (useremail) REFERENCES users (useremail)
+);
