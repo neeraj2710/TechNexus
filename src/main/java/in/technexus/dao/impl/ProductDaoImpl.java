@@ -6,10 +6,7 @@ import in.technexus.utility.DBUtil;
 import in.technexus.utility.IDUtil;
 
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -25,7 +22,7 @@ public class ProductDaoImpl implements ProductDao {
         Connection conn = DBUtil.provideConnection();
         PreparedStatement ps = null;
         try{
-            ps = conn.prepareStatement("insert into products values (?,?,?,?,?,?,?)");
+            ps = conn.prepareStatement("insert into products values (?,?,?,?,?,?,?,?)");
             ps.setString(1, product.getProdId());
             ps.setString(2, product.getProdName());
             ps.setString(3, product.getProdType());
@@ -33,6 +30,7 @@ public class ProductDaoImpl implements ProductDao {
             ps.setDouble(5, product.getProdPrice());
             ps.setInt(6, product.getProdQuantity());
             ps.setBlob(7, product.getProdImage());
+            ps.setString(1, "Y");
             if(ps.executeUpdate() > 0){
                 status = "Product registration successful! with product id: " + product.getProdId();
             }
@@ -100,7 +98,7 @@ public class ProductDaoImpl implements ProductDao {
         PreparedStatement ps = null;
         ResultSet rs = null;
         try{
-            ps = conn.prepareStatement("SELECT * from products");
+            ps = conn.prepareStatement("SELECT * from products where available = 'Y'");
             rs = ps.executeQuery();
             while(rs.next()){
                 ProductPojo product = new ProductPojo();
@@ -130,7 +128,7 @@ public class ProductDaoImpl implements ProductDao {
         ResultSet rs = null;
         type = type.toLowerCase();
         try{
-            ps = conn.prepareStatement("SELECT * from products where lower(ptype) like ?");
+            ps = conn.prepareStatement("SELECT * from products where lower(ptype) like ? and available = 'Y'");
             ps.setString(1, "%"+type+"%");
             rs = ps.executeQuery();
             while(rs.next()){
@@ -161,7 +159,7 @@ public class ProductDaoImpl implements ProductDao {
         ResultSet rs = null;
         search = search.toLowerCase();
         try{
-            ps = conn.prepareStatement("SELECT * from products where lower(ptype) like ? or lower(pname) like ? or lower(pinfo) like ?");
+            ps = conn.prepareStatement("SELECT * from products where lower(ptype) like ? or lower(pname) like ? or lower(pinfo) like ? and available = 'Y'");
             ps.setString(1, "%"+search+"%");
             ps.setString(2, "%"+search+"%");
             ps.setString(3, "%"+search+"%");
@@ -193,7 +191,7 @@ public class ProductDaoImpl implements ProductDao {
         PreparedStatement ps = null;
         ResultSet rs = null;
         try{
-            ps = conn.prepareStatement("select * from products where pid = ?");
+            ps = conn.prepareStatement("select * from products where pid = ? and available = 'Y'");
             ps.setString(1, prodId);
             rs = ps.executeQuery();
             if(rs.next()){
@@ -293,17 +291,65 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public boolean sellNProduct(String prodId, int n) {
+        Connection conn = DBUtil.provideConnection();
+        PreparedStatement ps = null;
+        try{
+            ps = conn.prepareStatement("update products set pquantity = (pquantity-?) where pid = ? and available = 'Y'");
+            ps.setInt(1, n);
+            ps.setString(2, prodId);
+            int count = ps.executeUpdate();
+            if(count == 1){
+                return true;
+            }
+        } catch (SQLException e) {
+            System.out.println("Error in sellNProduct:"+e.getMessage());
+            e.printStackTrace();
+        }
+        DBUtil.closeStatement(ps);
         return false;
     }
 
     @Override
     public List<String> getAllProductsType() {
-        return Collections.emptyList();
+        List<String> productType = new ArrayList<>();
+        Connection conn = DBUtil.provideConnection();
+        Statement st = null;
+        ResultSet rs = null;
+        try{
+            st = conn.createStatement();
+            rs = st.executeQuery("select distinct ptype from products where available = 'Y'");
+            while(rs.next()){
+                productType.add(rs.getString("ptype"));
+            }
+        } catch (SQLException e) {
+            System.out.println("Error in getAllProductsType:"+e.getMessage());
+            e.printStackTrace();
+        }
+        DBUtil.closeStatement(st);
+        DBUtil.closeResultSet(rs);
+        return productType;
     }
 
     @Override
     public byte[] getImage(String prodId) {
-        return new byte[0];
+        byte[] image = null;
+        Connection conn = DBUtil.provideConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            ps = conn.prepareStatement("select image from products where pid = ?");
+            ps.setString(1, prodId);
+            rs = ps.executeQuery();
+            if(rs.next()){
+                image = rs.getBytes("image");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error in getImage:"+e.getMessage());
+            e.printStackTrace();
+        }
+        DBUtil.closeStatement(ps);
+        DBUtil.closeResultSet(rs);
+        return image;
     }
 
     @Override

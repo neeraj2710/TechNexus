@@ -62,3 +62,6 @@ CREATE TABLE usercart (
     CONSTRAINT usercart_prodid_fk FOREIGN KEY (prodid) REFERENCES products (pid),
     CONSTRAINT usercart_useremail_fk FOREIGN KEY (useremail) REFERENCES users (useremail)
 );
+===========================================================================================================================================
+7)
+alter table products add(available char(1));
