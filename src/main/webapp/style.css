@@ -1,0 +1,84 @@
+body{
+    /*background-color: #e6f9e6;*/
+}
+
+.navbar-custom{
+    height: 45px;
+}
+
+.navbar-custom ,.footer-custom{
+    background: linear-gradient(
+            90deg,
+            #2a2a2a,
+            #595959
+    ); /* Deeper charcoal to lighter gray */
+    color: #f8f1e5; /* Soft cream text for high contrast */
+}
+
+
+
+.search-bg-custom{
+    background: linear-gradient(
+            90deg,
+            #3b4a5a,
+            #1f2937
+    ); /* Deeper blue-gray gradient for contrast */
+    color: #ffffff; /* White text for readability */
+    border: none; /* Clean look */
+    padding: 10px 15px; /* Padding for visual appeal */
+
+}
+
+.myform {
+    background-color: #f4f4f4; /* Very light gray for soft contrast */
+    color: #333333; /* Dark gray text */
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border-radius: 20px;
+}
+
+.box {
+    background-color: #f4f4f4; /* Very light gray for soft contrast */
+    color: #333333; /* Dark gray text */
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 380px;
+  } 
+   
+.box img{ 
+    height: 100px; 
+    max-width: 100px; 
+  }
+
+/* Navbar styling with a more pronounced gradient */
+.navbar-custom {
+    background: linear-gradient(
+            90deg,
+            #2a2a2a,
+            #595959
+    ); /* Deeper charcoal to lighter gray */
+    color: #f8f1e5; /* Soft cream text for high contrast */
+}
+
+.navbar-brand {
+    font-size: 20px;
+    color: #f8f1e5; /* Soft cream color for brand name */
+}
+
+.navbar-brand:hover {
+    color: #d4af37; /* Muted gold for hover effect */
+}
+
+/* Navbar link styles */
+.navbar-custom .nav-link {
+    color: #f8f1e5; /* Soft cream text for readability on gradient */
+}
+
+.navbar-custom .nav-link:hover {
+
+    color: #d4af37; /* Muted gold for link hover effect */
+}
+
+.search-bg-custom::placeholder {
+    color: #666666; /* Slightly darker gray for placeholder text */
+}

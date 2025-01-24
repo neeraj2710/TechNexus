@@ -354,6 +354,29 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public String removeProduct(String prodId) {
-        return "";
+//        code to soft-delete
+        String status = "Product removal failed!";
+        Connection conn = DBUtil.provideConnection();
+        PreparedStatement ps1 = null;
+        PreparedStatement ps2 = null;
+
+        try{
+            ps1 = conn.prepareStatement("update products set available = 'N' where pid = ?");
+            ps1.setString(1, prodId);
+            int k = ps1.executeUpdate();
+            if(k > 0){
+                status = "Product removed successfully!";
+                ps2 = conn.prepareStatement("delete from usercart where prodid = ?");
+                ps2.setString(1, prodId);
+                ps2.executeUpdate();
+            }
+        } catch (SQLException e) {
+            System.out.println("Error in removeProduct:" + e.getMessage());
+            e.printStackTrace();
+        }
+        DBUtil.closeStatement(ps1);
+        DBUtil.closeStatement(ps2);
+
+        return status;
     }
 }
