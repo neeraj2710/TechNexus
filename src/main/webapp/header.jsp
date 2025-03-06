@@ -4,192 +4,242 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechNexus Multi-Navbar</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'tech-purple': '#8B5CF6',
-                        'tech-pink': '#EC4899',
-                    }
-                }
+    <style>
+        :root {
+            --tech-purple: #8B5CF6;
+            --tech-pink: #EC4899;
+            --tech-blue: #60A5FA;
+        }
+
+        body {
+            background: linear-gradient(to bottom right, #4a1d96, #111827, #000000);
+            min-height: 100vh;
+        }
+
+        .navbar-custom {
+            background-color: #1f2937;
+        }
+
+        .brand-text {
+            background: linear-gradient(to right, var(--tech-purple), var(--tech-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .blue-text {
+            color: var(--tech-blue);
+        }
+
+        .nav-link:hover, .dropdown-item:hover {
+            color: var(--tech-purple) !important;
+        }
+
+        .dropdown-menu {
+            background-color: #1f2937;
+            border: 1px solid var(--tech-purple);
+        }
+
+        .dropdown-item {
+            color: white;
+        }
+
+        .dropdown-item:hover, .dropdown-item:focus {
+            background-color: #374151;
+            color: var(--tech-purple);
+        }
+
+        .purple-divider {
+            height: 2px;
+            background-color: var(--tech-purple);
+        }
+
+        .search-input {
+            background-color: #374151;
+            color: white;
+            border: 1px solid var(--tech-purple);
+        }
+
+        .search-input:focus {
+            background-color: #374151;
+            color: white;
+            box-shadow: 0 0 0 0.25rem rgba(139, 92, 246, 0.25);
+            border-color: var(--tech-pink);
+        }
+
+        .search-button {
+            background-color: var(--tech-purple);
+            color: white;
+        }
+
+        .search-button:hover {
+            background-color: var(--tech-pink);
+            color: white;
+        }
+
+        @media (max-width: 767.98px) {
+            .navbar-collapse {
+                background-color: #1f2937;
+                padding: 1rem;
             }
         }
-    </script>
+    </style>
 </head>
-<body class="bg-gradient-to-br from-purple-900 via-gray-900 to-black min-h-screen">
-<!-- Navbar 1 -->
-<nav class="bg-gray-800 text-white py-2">
-    <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center h-12">
-            <div class="text-2xl font-extrabold">
-                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-tech-purple to-tech-pink">
-                        Tech<span class="text-blue-400">Nexus</span>
-                    </span>
-            </div>
-            <div class="md:hidden">
-                <button onclick="toggleMenu('menu1')" class="text-white focus:outline-none">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-            <div id="menu1" class="hidden md:flex md:items-center md:space-x-6 absolute md:relative left-0 right-0 top-14 md:top-0 bg-gray-800 md:bg-transparent p-4 md:p-0">
-                <div class="relative inline-block text-left w-full md:w-auto">
-                    <button onclick="toggleDropdown(event, this)" class="hover:text-tech-purple w-full md:w-auto text-left py-2 md:py-0">
-                        Category
-                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                    </button>
-                    <div class="hidden absolute left-0 md:right-0 w-full md:w-48 py-2 mt-2 bg-gray-800 rounded-md shadow-xl z-10">
-                        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-700">Mobile</a>
-                        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-700">TV</a>
-                        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-700">Speaker</a>
-                        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-700">Cooler</a>
-                        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-700">iPad</a>
-                        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-700">Pixel</a>
-                        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-700">Laptop</a>
-                        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-700">PC</a>
-                    </div>
-                </div>
-                <a href="#" class="block py-2 md:py-0 hover:text-tech-purple">Products</a>
-                <a href="#" class="block py-2 md:py-0 hover:text-tech-purple">Login</a>
-                <a href="#" class="block py-2 md:py-0 hover:text-tech-purple">Register</a>
-            </div>
-        </div>
-    </div>
-</nav>
-
-<!-- Increased gap -->
-<div class="h-1 bg-tech-purple"></div>
-
-<!-- Navbar 2 -->
-<nav class="bg-gray-800 text-white py-2">
-    <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center h-12">
-            <div class="text-2xl font-extrabold">
-                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-tech-purple to-tech-pink">
-                        Tech<span class="text-blue-400">Nexus</span>
-                    </span>
-            </div>
-            <div class="md:hidden">
-                <button onclick="toggleMenu('menu2')" class="text-white focus:outline-none">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-            <div id="menu2" class="hidden md:flex md:items-center md:space-x-6 absolute md:relative left-0 right-0 top-14 md:top-0 bg-gray-800 md:bg-transparent p-4 md:p-0">
-                <a href="#" class="block py-2 md:py-0 hover:text-tech-purple">Products</a>
-                <div class="relative inline-block text-left w-full md:w-auto">
-                    <button onclick="toggleDropdown(event, this)" class="hover:text-tech-purple w-full md:w-auto text-left py-2 md:py-0">
-                        Category
-                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                    </button>
-                    <div class="hidden absolute left-0 md:right-0 w-full md:w-48 py-2 mt-2 bg-gray-800 rounded-md shadow-xl z-10">
-                        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-700">Mobile</a>
-                        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-700">TV</a>
-                        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-700">Speaker</a>
-                        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-700">Cooler</a>
-                        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-700">iPad</a>
-                        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-700">Pixel</a>
-                        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-700">Laptop</a>
-                        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-700">PC</a>
-                    </div>
-                </div>
-                <a href="#" class="block py-2 md:py-0 hover:text-tech-purple">Stocks</a>
-                <a href="#" class="block py-2 md:py-0 hover:text-tech-purple">Shipped</a>
-                <a href="#" class="block py-2 md:py-0 hover:text-tech-purple">Orders</a>
-                <div class="relative inline-block text-left w-full md:w-auto">
-                    <button onclick="toggleDropdown(event, this)" class="hover:text-tech-purple w-full md:w-auto text-left py-2 md:py-0">
-                        Update Items
-                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                    </button>
-                    <div class="hidden absolute left-0 md:right-0 w-full md:w-48 py-2 mt-2 bg-gray-800 rounded-md shadow-xl z-10">
-                        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-700">Add Product</a>
-                        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-700">Remove Product</a>
-                        <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-700">Update Product</a>
-                    </div>
-                </div>
-                <a href="#" class="block py-2 md:py-0 hover:text-tech-purple">Logout</a>
+<body>
+<div class="container-fluid p-0">
+    <!-- Navbar 1 -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom py-2">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="fs-4 fw-bold brand-text">Tech<span class="blue-text">Nexus</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu1">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="menu1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Category
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Mobile</a></li>
+                            <li><a class="dropdown-item" href="#">TV</a></li>
+                            <li><a class="dropdown-item" href="#">Speaker</a></li>
+                            <li><a class="dropdown-item" href="#">Cooler</a></li>
+                            <li><a class="dropdown-item" href="#">iPad</a></li>
+                            <li><a class="dropdown-item" href="#">Pixel</a></li>
+                            <li><a class="dropdown-item" href="#">Laptop</a></li>
+                            <li><a class="dropdown-item" href="#">PC</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Register</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!-- Increased gap -->
-<div class="h-1 bg-tech-purple"></div>
+    <!-- Divider -->
+    <div class="purple-divider"></div>
 
-<!-- Navbar 3 -->
-<nav class="bg-gray-800 text-white py-2">
-    <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center h-12">
-            <div class="text-2xl font-extrabold">
-                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-tech-purple to-tech-pink">
-                        Tech<span class="text-blue-400">Nexus</span>
-                    </span>
-            </div>
-            <div class="md:hidden">
-                <button onclick="toggleMenu('menu3')" class="text-white focus:outline-none">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-            <div id="menu3" class="hidden md:flex md:items-center md:space-x-6 absolute md:relative left-0 right-0 top-14 md:top-0 bg-gray-800 md:bg-transparent p-4 md:p-0">
-                <a href="#" class="block py-2 md:py-0 hover:text-tech-purple">Products</a>
-                <a href="#" class="block py-2 md:py-0 hover:text-tech-purple flex items-center">
-                    <i class="fas fa-shopping-cart mr-1"></i>
-                    Cart
-                </a>
-                <a href="#" class="block py-2 md:py-0 hover:text-tech-purple">Order</a>
-                <a href="#" class="block py-2 md:py-0 hover:text-tech-purple">Profile</a>
-                <a href="#" class="block py-2 md:py-0 hover:text-tech-purple">Logout</a>
+    <!-- Navbar 2 -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom py-2">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="fs-4 fw-bold brand-text">Tech<span class="blue-text">Nexus</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu2">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="menu2">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Category
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Mobile</a></li>
+                            <li><a class="dropdown-item" href="#">TV</a></li>
+                            <li><a class="dropdown-item" href="#">Speaker</a></li>
+                            <li><a class="dropdown-item" href="#">Cooler</a></li>
+                            <li><a class="dropdown-item" href="#">iPad</a></li>
+                            <li><a class="dropdown-item" href="#">Pixel</a></li>
+                            <li><a class="dropdown-item" href="#">Laptop</a></li>
+                            <li><a class="dropdown-item" href="#">PC</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Stocks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shipped</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Orders</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Update Items
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Add Product</a></li>
+                            <li><a class="dropdown-item" href="#">Remove Product</a></li>
+                            <li><a class="dropdown-item" href="#">Update Product</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!-- Search Bar -->
-<div class="container mx-auto mt-4 px-4">
-    <div class="flex">
-        <input type="text" placeholder="Search..." class="w-full p-2 rounded-l-md bg-gray-700 text-white border border-tech-purple focus:outline-none focus:ring-2 focus:ring-tech-pink">
-        <button class="bg-tech-purple hover:bg-tech-pink text-white font-bold py-2 px-4 rounded-r-md transition duration-300">
-            Search
-        </button>
+    <!-- Divider -->
+    <div class="purple-divider"></div>
+
+    <!-- Navbar 3 -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom py-2">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="fs-4 fw-bold brand-text">Tech<span class="blue-text">Nexus</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu3">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="menu3">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-shopping-cart me-1"></i>Cart
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="input-group">
+                    <input type="text" class="form-control search-input" placeholder="Search...">
+                    <button class="btn search-button" type="button">Search</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<script>
-    let openDropdown = null;
-    let openMenu = null;
-
-    function toggleDropdown(event, button) {
-        event.stopPropagation();
-        const dropdown = button.nextElementSibling;
-
-        if (openDropdown && openDropdown !== dropdown) {
-            openDropdown.classList.add('hidden');
-        }
-
-        dropdown.classList.toggle('hidden');
-        openDropdown = dropdown.classList.contains('hidden') ? null : dropdown;
-    }
-
-    function toggleMenu(menuId) {
-        const menu = document.getElementById(menuId);
-        if (openMenu && openMenu !== menu) {
-            openMenu.classList.add('hidden');
-        }
-        menu.classList.toggle('hidden');
-        openMenu = menu.classList.contains('hidden') ? null : menu;
-    }
-
-    document.addEventListener('click', function(event) {
-        if (openDropdown && !openDropdown.contains(event.target)) {
-            openDropdown.classList.add('hidden');
-            openDropdown = null;
-        }
-        if (openMenu && !openMenu.contains(event.target) && !event.target.closest('button')) {
-            openMenu.classList.add('hidden');
-            openMenu = null;
-        }
-    });
-</script>
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

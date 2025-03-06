@@ -1,7 +1,7 @@
 package in.technexus.pojo;
 
 import java.io.InputStream;
-import java.sql.Date;
+import java.util.Date;
 
 public class OrderDetailsPojo {
 

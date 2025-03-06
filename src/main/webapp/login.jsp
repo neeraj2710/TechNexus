@@ -4,64 +4,187 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechNexus Login</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .page-background {
+            background: linear-gradient(to bottom right, #4a1d96, #111827, #000000);
+            min-height: 100vh;
+        }
+        .card-custom {
+            background-color: #1f2937;
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s;
+        }
+        .card-custom:hover {
+            transform: scale(1.05);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #c084fc, #ec4899, #ef4444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .blue-text {
+            color: #60a5fa;
+        }
+        .form-control-custom {
+            background-color: #374151;
+            border: 1px solid #4b5563;
+            color: white;
+        }
+        .form-control-custom:focus {
+            background-color: #374151;
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 0.25rem rgba(139, 92, 246, 0.25);
+            color: white;
+        }
+        .btn-custom {
+            background: linear-gradient(to right, #9333ea, #db2777);
+            transition: all 0.3s;
+        }
+        .btn-custom:hover {
+            background: linear-gradient(to right, #7e22ce, #be185d);
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .dot {
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .dot-1 {
+            background-color: #8b5cf6;
+            animation: bounce 1s infinite;
+        }
+        .dot-2 {
+            background-color: #ec4899;
+            animation: bounce 1s infinite;
+            animation-delay: 0.2s;
+        }
+        .dot-3 {
+            background-color: #3b82f6;
+            animation: bounce 1s infinite;
+            animation-delay: 0.4s;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @media (max-width: 576px) {
+            .dot {
+                width: 0.5rem;
+                height: 0.5rem;
+            }
+        }
+    </style>
+    <!-- Bootstrap JS Bundle with Popper - Load BEFORE the include -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<jsp:include page="header.jsp"/>
-<body class="bg-gradient-to-br from-purple-900 via-gray-900 to-black min-h-screen flex items-center justify-center p-4">
 
-<div class="bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-2xl w-full max-w-md transform hover:scale-105 transition-all duration-300">
-    <div class="text-center mb-8">
-        <h2 class="text-4xl sm:text-5xl font-extrabold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 animate-pulse">
-            Tech<span class="text-blue-400">Nexus</span>
-        </h2>
-        <p class="text-gray-400 text-xs sm:text-sm">Connecting Innovation</p>
-        <div class="mt-4 flex justify-center space-x-2">
-            <span class="inline-block w-2 h-2 sm:w-3 sm:h-3 bg-purple-500 rounded-full animate-bounce"></span>
-            <span class="inline-block w-2 h-2 sm:w-3 sm:h-3 bg-pink-500 rounded-full animate-bounce" style="animation-delay: 0.2s"></span>
-            <span class="inline-block w-2 h-2 sm:w-3 sm:h-3 bg-blue-500 rounded-full animate-bounce" style="animation-delay: 0.4s"></span>
+<body>
+<div class="page-background">
+    <!-- Include the header -->
+    <jsp:include page="header.jsp"/>
+
+    <!-- Login Form -->
+    <div class="container d-flex align-items-center justify-content-center py-4">
+        <div class="card-custom p-4 p-sm-5 w-100" style="max-width: 28rem;">
+            <div class="text-center mb-4">
+                <h2 class="display-5 fw-bold mb-2 gradient-text animate-pulse">
+                    Tech<span class="blue-text">Nexus</span>
+                </h2>
+                <p class="text-secondary small">Connecting Innovation</p>
+                <div class="mt-3 d-flex justify-content-center">
+                    <span class="dot dot-1 mx-1"></span>
+                    <span class="dot dot-2 mx-1"></span>
+                    <span class="dot dot-3 mx-1"></span>
+                </div>
+            </div>
+            <form>
+                <div class="mb-3">
+                    <label for="username" class="form-label text-light small fw-medium">Username</label>
+                    <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            required
+                            class="form-control form-control-custom"
+                    >
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label text-light small fw-medium">Password</label>
+                    <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            required
+                            class="form-control form-control-custom"
+                    >
+                </div>
+                <div class="mb-4">
+                    <label for="userType" class="form-label text-light small fw-medium">User Type</label>
+                    <select
+                            id="userType"
+                            name="userType"
+                            class="form-select form-control-custom"
+                    >
+                        <option value="customer">Customer</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <button
+                        type="submit"
+                        class="btn btn-custom text-white fw-bold py-3 w-100 rounded-3"
+                >
+                    Log In
+                </button>
+            </form>
         </div>
     </div>
-    <form>
-        <div class="mb-4">
-            <label for="username" class="block text-sm font-medium text-gray-300 mb-1">Username</label>
-            <input
-                    type="text"
-                    id="username"
-                    name="username"
-                    required
-                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200 text-white"
-            >
-        </div>
-        <div class="mb-4">
-            <label for="password" class="block text-sm font-medium text-gray-300 mb-1">Password</label>
-            <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    required
-                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200 text-white"
-            >
-        </div>
-        <div class="mb-6">
-            <label for="userType" class="block text-sm font-medium text-gray-300 mb-1">User Type</label>
-            <select
-                    id="userType"
-                    name="userType"
-                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200 text-white"
-            >
-                <option value="customer">Customer</option>
-                <option value="admin">Admin</option>
-            </select>
-        </div>
-        <button
-                type="submit"
-                class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 px-4 rounded-md hover:from-purple-700 hover:to-pink-700 transition duration-300 transform hover:scale-105 hover:shadow-lg"
-        >
-            Log In
-        </button>
-    </form>
 </div>
 
+<script>
+    // Force reinitialize Bootstrap components after page load
+    document.addEventListener('DOMContentLoaded', function() {
+        // Wait a bit to ensure everything is loaded
+        setTimeout(function() {
+            // Manually initialize all dropdowns
+            var dropdownElementList = document.querySelectorAll('.dropdown-toggle');
+            dropdownElementList.forEach(function(dropdownToggleEl) {
+                var dropdown = new bootstrap.Dropdown(dropdownToggleEl);
+            });
+
+            // Manually initialize all collapse elements (for mobile menu)
+            var collapseElementList = document.querySelectorAll('.navbar-toggler');
+            collapseElementList.forEach(function(collapseToggleEl) {
+                collapseToggleEl.addEventListener('click', function() {
+                    var targetId = this.getAttribute('data-bs-target');
+                    var targetElement = document.querySelector(targetId);
+                    var bsCollapse = new bootstrap.Collapse(targetElement);
+                });
+            });
+        }, 500);
+    });
+</script>
 </body>
-<jsp:include page="footer.jsp"/>
 </html>
