@@ -1,0 +1,170 @@
+[
+    {
+        "PID": "P20230423082243",
+        "PINFO": "iPhone 16. boasts an advanced dual-camera system that allows you to click mesmerising pictures with immaculate clarity.",
+        "PNAME": "APPLE iPhone 16 Pro (Graphite, 512 GB)",
+        "PPRICE": 202999,
+        "PQUANTITY": 993,
+        "PTYPE": "mobile"
+    },
+    {
+        "PID": "P20230423083830",
+        "PINFO": "Hp Laptop (8 GB/512 GB SSD/Windows 11 Home) 15s- fr4000TU Thin and Light Laptop  (15.6 Inch, Natural Silver, 1.69 Kg, With MS Office)",
+        "PNAME": "HP Intel Core i5 11th Gen",
+        "PPRICE": 40990,
+        "PQUANTITY": 995,
+        "PTYPE": "laptop"
+    },
+    {
+        "PID": "P20230423084143",
+        "PINFO": "Mi X Pro 125 cm (50 inch) Ultra HD (4K) LED Smart Google TV with Dolby Vision IQ and 30W Dolby Atmos",
+        "PNAME": "LED Smart Google TV ",
+        "PPRICE": 41999,
+        "PQUANTITY": 997,
+        "PTYPE": "tv"
+    },
+    {
+        "PID": "P20230423084144",
+        "PINFO": "With a mind-blowing 16.51 cm (6.5) FHD+ Ultra-wide display and a refresh rate of 90 Hz, this phone makes it possible to multitask while being entertained.",
+        "PNAME": "MOTOROLA G32 Mobile",
+        "PPRICE": 11999,
+        "PQUANTITY": 1,
+        "PTYPE": "mobile"
+    },
+    {
+        "PID": "P20230423084145",
+        "PINFO": "Enjoy watching high-quality entertainment with immersive audio with the realme Smart TV Neo in your home.",
+        "PNAME": "realme NEO 80 cm (32 inch) HD Ready LED Smart Linux TV  (RMV2101)",
+        "PPRICE": 11999,
+        "PQUANTITY": 1000,
+        "PTYPE": "tv"
+    },
+    {
+        "PID": "P20230423084146",
+        "PINFO": "Stardust Purple, 128 GB (6 GB RAM) | 16.94 cm (6.67 inch) Full HD Display | 50MP (OIS) + 8MP + 2MP | 16MP Front Camera | 5000 mAh Lithium Polymer Battery",
+        "PNAME": "REDMI Note 12 Pro 5G",
+        "PPRICE": 24999,
+        "PQUANTITY": 999,
+        "PTYPE": "mobile"
+    },
+    {
+        "PID": "P20230423084147",
+        "PINFO": "Experience intuitiveness and enjoy seamless operation with smooth transition with the 5G-ready Google Pixel 6a that comes bundled with a myriad of innovative features.",
+        "PNAME": "Google Pixel 6a (Charcoal, 128 GB)",
+        "PPRICE": 27999,
+        "PQUANTITY": 1000,
+        "PTYPE": "mobile"
+    },
+    {
+        "PID": "P20230423084148",
+        "PINFO": "Infinix Y1 80 cm (32 inch) HD Ready LED Smart Linux TV with Wall Mount  (32Y1)",
+        "PNAME": "Infinix Y1 80 cm (32 inch) HD Ready LED Smart Linux TV",
+        "PPRICE": 8499,
+        "PQUANTITY": 1000,
+        "PTYPE": "tv"
+    },
+    {
+        "PID": "P20230423084149",
+        "PINFO": "This Canon Camera gives you the freedom to explore different ways to shoot subjects. ",
+        "PNAME": "Canon EOS 1500D DSLR Camera",
+        "PPRICE": 38499,
+        "PQUANTITY": 1000,
+        "PTYPE": "camera"
+    },
+    {
+        "PID": "P20230423084150",
+        "PINFO": "IMPLY GO PRO 4K Full HD WiFi 30M Waterproof Sports Action Camera Waterproof DV Camcorder 16MP Sports and Action Camera  (Black, 16 MP)",
+        "PNAME": "IMPLY GO PRO 4K Full HD Camera",
+        "PPRICE": 1999,
+        "PQUANTITY": 1000,
+        "PTYPE": "camera"
+    },
+    {
+        "PID": "P20230423084151",
+        "PINFO": "Kids Digital Camera Video Recorder , Mini 2 Inches Screen Children's Camera 8MP Great Gift for Boys (Blue) Instant Camera  (Blue)",
+        "PNAME": "IndusBay Kids Camera",
+        "PPRICE": 899,
+        "PQUANTITY": 1000,
+        "PTYPE": "camera"
+    },
+    {
+        "PID": "P20230423084152",
+        "PINFO": "10 W Laptop/Desktop Speaker  (Black, Black, 2.0 Channel)",
+        "PNAME": "ZEBRONICS ZEB-WARRIOR Speaker",
+        "PPRICE": 899,
+        "PQUANTITY": 1000,
+        "PTYPE": "speaker"
+    },
+    {
+        "PID": "P20230423084154",
+        "PINFO": "JBL Go Essential with Rich Bass, 5 Hrs Playtime, IPX7 Waterproof, Ultra Portable 3.1 W Bluetooth Speaker  (Black, Mono Channel)",
+        "PNAME": "JBL Go Essential Speaker",
+        "PPRICE": 1699,
+        "PQUANTITY": 1000,
+        "PTYPE": "speaker"
+    },
+    {
+        "PID": "P20230423084155",
+        "PINFO": "SAMSUNG Galaxy Tab A8 3 GB RAM 32 GB ROM 10.5 inch with Wi-Fi Only Tablet (Gray)",
+        "PNAME": "SAMSUNG Galaxy Tab",
+        "PPRICE": 16999,
+        "PQUANTITY": 1000,
+        "PTYPE": "tablet"
+    },
+    {
+        "PID": "P20230423084156",
+        "PINFO": "realme Pad 3 GB RAM 32 GB ROM 10.4 inch with Wi-Fi Only Tablet (Grey)",
+        "PNAME": "Realme Pad 3 GB",
+        "PPRICE": 13999,
+        "PQUANTITY": 1000,
+        "PTYPE": "tablet"
+    },
+    {
+        "PID": "P20230423084157",
+        "PINFO": "REDMI Pad 6 GB RAM 128 GB ROM 10.61 Inch with Wi-Fi Only Tablet (Graphite Gray)",
+        "PNAME": "REDMI Pad 6",
+        "PPRICE": 18999,
+        "PQUANTITY": 1000,
+        "PTYPE": "tablet"
+    },
+    {
+        "PID": "P20230423084158",
+        "PINFO": "ASUS Vivobook 15 Core i3 11th Gen - (8 GB/512 GB SSD/Windows 11 Home) X515EA-EJ322WS | X515EA-EJ328WS Thin and Light Laptop  (15.6 Inch, Transparent Silver, 1.80 kg, With MS Office)",
+        "PNAME": "ASUS Vivobook 15 Core i3 11th Gen",
+        "PPRICE": 50999,
+        "PQUANTITY": 1000,
+        "PTYPE": "laptop"
+    },
+    {
+        "PID": "P20230423084159",
+        "PINFO": "8 GB/512 GB SSD/Windows 11 Home |  EX 215-54-583M Thin and Light Laptop  (15.6 Inch, Charcoal Black, 1.7 Kg)",
+        "PNAME": "Acer Extensa Core i5 11th Gen",
+        "PPRICE": 57999,
+        "PQUANTITY": 1000,
+        "PTYPE": "laptop"
+    },
+    {
+        "PID": "P20230423084160",
+        "PINFO": "8 GB/256 GB SSD/Windows 11 Home | 15ITL05 Thin and Light Laptop  (15.6 Inch, Platinum Grey, 1.7 Kg, With MS Office)",
+        "PNAME": "Lenovo IdeaPad Slim 3 Intel Core i3 11th Gen",
+        "PPRICE": 60999,
+        "PQUANTITY": 1000,
+        "PTYPE": "laptop"
+    },
+    {
+        "PID": "P20230423084161",
+        "PINFO": "Powerful Cooling matched with modern aesthetics, Powerful Cool Air Delivery of 4300 cubic m/hr., Suitable for room upto 500 sq. ft.,",
+        "PNAME": "Kenstar 90 L Desert Air Cooler",
+        "PPRICE": 10999,
+        "PQUANTITY": 1000,
+        "PTYPE": "cooler"
+    },
+    {
+        "PID": "P20230423084162",
+        "PINFO": "BAJAJ Crest Neo 1200 mm Ultra High Speed 3 Blade Ceiling Fan  (Brown, Pack of 1)#JustHere",
+        "PNAME": "BAJAJ Crest Neo Fan",
+        "PPRICE": 1399,
+        "PQUANTITY": 1000,
+        "PTYPE": "fan"
+    }
+]

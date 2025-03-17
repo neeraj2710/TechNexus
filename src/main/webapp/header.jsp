@@ -230,10 +230,12 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-12">
+                <form action="LandingServlet">
                 <div class="input-group">
-                    <input type="text" class="form-control search-input" placeholder="Search...">
-                    <button class="btn search-button" type="button">Search</button>
+                    <input type="text" name="search" class="form-control search-input" placeholder="Search...">
+                    <input class="btn search-button" value="Search" type="submit">
                 </div>
+                </form>
             </div>
         </div>
     </div>
